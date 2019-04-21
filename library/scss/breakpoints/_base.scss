@@ -7,7 +7,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -29,6 +29,48 @@ img {
 
 		li {
 			border-bottom: 0px;
+		}
+	}
+}
+
+.block-navigation {
+	justify-content: space-between;
+
+	&__blocks {
+
+		.block {
+			margin-bottom: 1em;
+			position: relative;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			.overlay {
+				width: 95%;
+				height: 98%;
+				background: rgba(0,0,0,0.5);
+				top: 0%;
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 2em;
+
+				> div {
+					border-top: 2px solid white;
+					border-bottom: 2px solid white;
+					width: 100%;
+					text-align: center;
+					padding: .2rem;
+					font-family: $sans-serif;
+					color: $white;
+					text-transform: uppercase;
+					font-size: 2rem;
+				}
+			}
 		}
 	}
 }

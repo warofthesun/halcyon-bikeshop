@@ -1690,7 +1690,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -1714,6 +1714,44 @@ img {
       flex-wrap: wrap; }
   #inner-footer .nav li {
     border-bottom: 0px; }
+
+.block-navigation {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .block-navigation__blocks .block {
+    margin-bottom: 1em;
+    position: relative;
+    overflow: hidden; }
+    .block-navigation__blocks .block img {
+      width: 100%;
+      height: auto; }
+    .block-navigation__blocks .block .overlay {
+      width: 95%;
+      height: 98%;
+      background: rgba(0, 0, 0, 0.5);
+      top: 0%;
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 2em; }
+      .block-navigation__blocks .block .overlay > div {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        width: 100%;
+        text-align: center;
+        padding: .2rem;
+        font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 2rem; }
 
 /********************
 WORDPRESS BODY CLASSES
