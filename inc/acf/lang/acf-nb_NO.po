@@ -1540,7 +1540,7 @@ msgstr "Formatet som returneres via malfunksjoner"
 #: includes/fields/class-acf-field-date_picker.php:272
 #: includes/fields/class-acf-field-date_time_picker.php:231
 msgid "Week Starts On"
-msgstr "Uken starter på"
+msgstr "Uken halcyon på"
 
 #: includes/fields/class-acf-field-date_time_picker.php:36
 msgid "Date Time Picker"

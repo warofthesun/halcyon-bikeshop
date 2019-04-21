@@ -1,59 +1,59 @@
 <?php
 
-// LOAD starter CORE (if you remove this, the theme will break)
-require_once( 'library/starter.php' );
+// LOAD halcyon CORE (if you remove this, the theme will break)
+require_once( 'library/halcyon.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH starter
+LAUNCH halcyon
 Let's get everything up and running.
 *********************/
 
-function starter_ahoy() {
+function halcyon_ahoy() {
 
   //Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'startertheme', get_template_directory() . '/library/translation' );
+  load_theme_textdomain( 'halcyon', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
-  add_action( 'init', 'starter_head_cleanup' );
+  add_action( 'init', 'halcyon_head_cleanup' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'starter_rss_version' );
+  add_filter( 'the_generator', 'halcyon_rss_version' );
   // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'starter_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'wp_head', 'halcyon_remove_wp_widget_recent_comments_style', 1 );
   // clean up comment styles in the head
-  add_action( 'wp_head', 'starter_remove_recent_comments_style', 1 );
+  add_action( 'wp_head', 'halcyon_remove_recent_comments_style', 1 );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'starter_gallery_style' );
+  add_filter( 'gallery_style', 'halcyon_gallery_style' );
 
   // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'starter_scripts_and_styles', 999 );
+  add_action( 'wp_enqueue_scripts', 'halcyon_scripts_and_styles', 999 );
   // ie conditional wrapper
 
   // launching this stuff after theme setup
-  starter_theme_support();
+  halcyon_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'starter_register_sidebars' );
+  add_action( 'widgets_init', 'halcyon_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'starter_filter_ptags_on_images' );
+  add_filter( 'the_content', 'halcyon_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'starter_excerpt_more' );
+  add_filter( 'excerpt_more', 'halcyon_excerpt_more' );
 
-} /* end starter ahoy */
+} /* end halcyon ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'starter_ahoy' );
+add_action( 'after_setup_theme', 'halcyon_ahoy' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -65,8 +65,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'starter-thumb-600', 600, 150, true );
-add_image_size( 'starter-thumb-300', 300, 100, true );
+add_image_size( 'halcyon-thumb-600', 600, 150, true );
+add_image_size( 'halcyon-thumb-300', 300, 100, true );
 add_image_size( 'gallery-image', 680, 450, true );
 
 /*
@@ -81,21 +81,21 @@ inside the thumbnail function.
 
 For example, to call the 300 x 100 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'starter-thumb-300' ); ?>
+<?php the_post_thumbnail( 'halcyon-thumb-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'starter-thumb-600' ); ?>
+<?php the_post_thumbnail( 'halcyon-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'starter_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'halcyon_custom_image_sizes' );
 
-function starter_custom_image_sizes( $sizes ) {
+function halcyon_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'gallery-image' => __('Gallery Image'),
-        'starter-thumb-600' => __('600px by 150px'),
-        'starter-thumb-300' => __('300px by 100px'),
+        'halcyon-thumb-600' => __('600px by 150px'),
+        'halcyon-thumb-300' => __('300px by 100px'),
     ) );
 }
 
@@ -126,7 +126,7 @@ require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-act
   - Create some boilerplate Sections, Controls and Settings
 */
 
-function starter_theme_customizer($wp_customize) {
+function halcyon_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections
@@ -145,16 +145,17 @@ function starter_theme_customizer($wp_customize) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'starter_theme_customizer' );
+add_action( 'customize_register', 'halcyon_theme_customizer' );
+add_theme_support( 'custom-logo' );
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function starter_register_sidebars() {
+function halcyon_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'startertheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 1', 'halcyon' ),
+		'description' => __( 'The first (primary) sidebar.', 'halcyon' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -171,8 +172,8 @@ function starter_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'startertheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'startertheme' ),
+		'name' => __( 'Sidebar 2', 'halcyon' ),
+		'description' => __( 'The second (secondary) sidebar.', 'halcyon' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -253,7 +254,7 @@ add_action( 'admin_menu', 'rudr_add_new_tags_metabox');
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function starter_comments( $comment, $args, $depth ) {
+function halcyon_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -271,13 +272,13 @@ function starter_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'startertheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'startertheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'startertheme' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'halcyon' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'halcyon' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'halcyon' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'startertheme' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'halcyon' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -297,11 +298,11 @@ external fonts. If you're using Google Fonts, you
 can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
-function starter_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lora:400,400i|Roboto:300,300i,400,400i,500,700,900');
+function halcyon_fonts() {
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Merriweather:400,700|Raleway');
 }
 
-add_action('wp_enqueue_scripts', 'starter_fonts');
+add_action('wp_enqueue_scripts', 'halcyon_fonts');
 
 
 /* Load ScrollMagic Scripts */

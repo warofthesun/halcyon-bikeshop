@@ -35,7 +35,7 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
 		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 		<script>
       window.sr = ScrollReveal({ duration: 600, reset: true, easing: 'ease-in', scale: .98, distance:'50px'});
@@ -50,8 +50,17 @@
 		<div id="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+				<?php if ( is_front_page() ) : ?>
+				<div style="height:100vh;background:red;padding:1em;">
+					<?php
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
 
-				<div id="inner-header" class="wrap  row">
+					?>
+					<img src="<?php echo $logo[0]; ?>"></ing><br />line one<br />line two<br />navigation
+				</div>
+				<?php else : ?>
+				<div id="inner-header" class="wrap row">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 
@@ -65,7 +74,7 @@
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
+    					         'menu' => __( 'The Main Menu', 'halcyon' ),  // nav name
     					         'menu_class' => 'nav top-nav ',               // adding custom nav class
     					         'theme_location' => 'main-nav',                 // where it's located in the theme
     					         'before' => '',                                 // before the menu
@@ -81,5 +90,6 @@
 						Menu <i class="fas fa-chevron-down"></i>
 					</div>
 				</div>
-
+				regular
+				<?php endif; ?>
 			</header>

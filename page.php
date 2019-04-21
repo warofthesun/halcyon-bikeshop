@@ -3,7 +3,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap  row">
+				<div id="inner-content" class="wrap row">
 
 						<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -16,8 +16,12 @@
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 									<p class="byline vcard">
-										<?php printf( __( 'Posted', 'startertheme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'startertheme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+										<?php printf( __( 'Posted', 'halcyon').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'halcyon').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
 									</p>
+									<?php printf( '<p class="footer-category">' . __('filed under', 'halcyon' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
+
+                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'halcyon' ) . '</span> ', ', ', '</p>' ); ?>
+
 
 								</header> <?php // end article header ?>
 

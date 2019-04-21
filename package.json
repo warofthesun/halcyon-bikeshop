@@ -1,5 +1,5 @@
 {
-  "name": "starter-theme",
+  "name": "halcyon-theme",
   "version": "1.0.0",
   "description": "Base line Wordpress theme.",
   "main": "gulpfile.js",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/warofthesun/starter-theme.git"
+    "url": "git+https://github.com/warofthesun/halcyon-theme.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/warofthesun/starter-theme/issues"
+    "url": "https://github.com/warofthesun/halcyon-theme/issues"
   },
-  "homepage": "https://github.com/warofthesun/starter-theme#readme"
+  "homepage": "https://github.com/warofthesun/halcyon-theme#readme"
 }

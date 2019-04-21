@@ -10,18 +10,6 @@ function my_theme_register_required_plugins() {
 	 */
 	$plugins = array(
 
-    // GitHub Updater
-		array(
-			'name'     				=> 'GitHub Updater', // The plugin name
-			'slug'     				=> 'github-updater-develop', // The plugin slug (typically the folder name)
-			'source'   				=> 'https://github.com/afragen/github-updater/archive/develop.zip', // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-
     // W3 Total Cache
 		array(
 			'name'     				=> 'W3 Total Cache', // The plugin name
@@ -57,18 +45,6 @@ function my_theme_register_required_plugins() {
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
-
-    // Google Analytics
-		// array(
-		// 	'name'     				=> 'Google Analytics Dashboard for WP', // The plugin name
-		// 	'slug'     				=> 'google-analytics-dashboard-for-wp', // The plugin slug (typically the folder name)
-		// 	'source'   				=> 'https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.zip', // The plugin source
-		// 	'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-		// 	'version' 				=> '5.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-		// 	'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-		// 	'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-		// 	'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		// ),
 
     // Regenerate Thumbnails
 		array(
@@ -121,7 +97,7 @@ function my_theme_register_required_plugins() {
 	);
 
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'StarterTheme';
+	$theme_text_domain = 'halcyon';
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.

@@ -1,4 +1,4 @@
-# Starter Theme
+# halcyon Theme
 Base line Wordpress theme.
 
 # H1

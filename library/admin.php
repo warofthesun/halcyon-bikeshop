@@ -44,7 +44,7 @@ function disable_default_dashboard_widgets() {
 	have more plugin widgets you'd like to remove?
 	share them with us so we can get a list of
 	the most commonly used. :D
-	https://github.com/eddiemachado/starter/issues
+	https://github.com/eddiemachado/halcyon/issues
 	*/
 }
 
@@ -60,7 +60,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
 // RSS Dashboard Widget
-function starter_rss_dashboard_widget() {
+function halcyon_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
 		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
 		$feed = fetch_feed( 'http://feeds.feedburner.com/wpcandy' );        // specify the source feed
@@ -76,7 +76,7 @@ function starter_rss_dashboard_widget() {
 	else foreach ($items as $item) { ?>
 
 	<h4 style="margin-bottom: 0;">
-		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date( __( 'j F Y @ g:i a', 'startertheme' ), $item->get_date( 'Y-m-d H:i:s' ) ); ?>" target="_blank">
+		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date( __( 'j F Y @ g:i a', 'halcyon' ), $item->get_date( 'Y-m-d H:i:s' ) ); ?>" target="_blank">
 			<?php echo $item->get_title(); ?>
 		</a>
 	</h4>
@@ -87,8 +87,8 @@ function starter_rss_dashboard_widget() {
 }
 
 // calling all custom dashboard widgets
-function starter_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'starter_rss_dashboard_widget', __( 'Recently on Themble (Customize on admin.php)', 'startertheme' ), 'starter_rss_dashboard_widget' );
+function halcyon_custom_dashboard_widgets() {
+	wp_add_dashboard_widget( 'halcyon_rss_dashboard_widget', __( 'Recently on Themble (Customize on admin.php)', 'halcyon' ), 'halcyon_rss_dashboard_widget' );
 	/*
 	Be sure to drop any other created Dashboard Widgets
 	in this function and they will all load.
@@ -99,7 +99,7 @@ function starter_custom_dashboard_widgets() {
 // removing the dashboard widgets
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-add_action( 'wp_dashboard_setup', 'starter_custom_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'halcyon_custom_dashboard_widgets' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/
@@ -108,20 +108,20 @@ add_action( 'wp_dashboard_setup', 'starter_custom_dashboard_widgets' );
 
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-function starter_login_css() {
-	wp_enqueue_style( 'starter_login_css', get_template_directory_uri() . '/library/css/login.css', false );
+function halcyon_login_css() {
+	wp_enqueue_style( 'halcyon_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function starter_login_url() {  return home_url(); }
+function halcyon_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function starter_login_title() { return get_option( 'blogname' ); }
+function halcyon_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'starter_login_css', 10 );
-add_filter( 'login_headerurl', 'starter_login_url' );
-add_filter( 'login_headertitle', 'starter_login_title' );
+add_action( 'login_enqueue_scripts', 'halcyon_login_css', 10 );
+add_filter( 'login_headerurl', 'halcyon_login_url' );
+add_filter( 'login_headertitle', 'halcyon_login_title' );
 
 
 /************* CUSTOMIZE ADMIN *******************/
@@ -134,11 +134,11 @@ you like.
 */
 
 // Custom Backend Footer
-function starter_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/starter" target="_blank">starter</a>.', 'startertheme' );
+function halcyon_custom_admin_footer() {
+	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/halcyon" target="_blank">halcyon</a>.', 'halcyon' );
 }
 
 // adding it to the admin area
-add_filter( 'admin_footer_text', 'starter_custom_admin_footer' );
+add_filter( 'admin_footer_text', 'halcyon_custom_admin_footer' );
 
 ?>

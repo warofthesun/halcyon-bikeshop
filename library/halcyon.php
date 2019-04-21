@@ -1,6 +1,6 @@
 <?php
 
-function starter_head_cleanup() {
+function halcyon_head_cleanup() {
 	// category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
@@ -18,11 +18,11 @@ function starter_head_cleanup() {
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
 	// remove WP version from css
-	add_filter( 'style_loader_src', 'starter_remove_wp_ver_css_js', 9999 );
+	add_filter( 'style_loader_src', 'halcyon_remove_wp_ver_css_js', 9999 );
 	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'starter_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'halcyon_remove_wp_ver_css_js', 9999 );
 
-} /* end starter head cleanup */
+} /* end halcyon head cleanup */
 
 // A better title
 // http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
@@ -56,24 +56,24 @@ function rw_title( $title, $sep, $seplocation ) {
 } // end better title
 
 // remove WP version from RSS
-function starter_rss_version() { return ''; }
+function halcyon_rss_version() { return ''; }
 
 // remove WP version from scripts
-function starter_remove_wp_ver_css_js( $src ) {
+function halcyon_remove_wp_ver_css_js( $src ) {
 	if ( strpos( $src, 'ver=' ) )
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
 
 // remove injected CSS for recent comments widget
-function starter_remove_wp_widget_recent_comments_style() {
+function halcyon_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 
 // remove injected CSS from recent comments widget
-function starter_remove_recent_comments_style() {
+function halcyon_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
 		remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -81,7 +81,7 @@ function starter_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function starter_gallery_style($css) {
+function halcyon_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -91,7 +91,7 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-function starter_scripts_and_styles() {
+function halcyon_scripts_and_styles() {
 
 
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
@@ -99,13 +99,13 @@ function starter_scripts_and_styles() {
   if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
-		wp_register_script( 'starter-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', true );
+		wp_register_script( 'halcyon-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', true );
 
 		// register main stylesheet
-		wp_register_style( 'starter-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'halcyon-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
 		// ie-only style sheet
-		wp_register_style( 'starter-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+		wp_register_style( 'halcyon-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -113,16 +113,16 @@ function starter_scripts_and_styles() {
     }
 
 		//adding scripts file in the footer
-	  wp_register_script( 'starter-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+	  wp_register_script( 'halcyon-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 
 
 		// enqueue styles and scripts
-		wp_enqueue_script( 'starter-modernizr' );
-		wp_enqueue_style( 'starter-stylesheet' );
-		wp_enqueue_style( 'starter-ie-only' );
+		wp_enqueue_script( 'halcyon-modernizr' );
+		wp_enqueue_style( 'halcyon-stylesheet' );
+		wp_enqueue_style( 'halcyon-ie-only' );
 
-		$wp_styles->add_data( 'starter-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'halcyon-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
 		/*
 		I recommend using a plugin to call jQuery
@@ -130,7 +130,7 @@ function starter_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'starter-js' );
+		wp_enqueue_script( 'halcyon-js' );
 
 
 
@@ -146,7 +146,7 @@ THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
-function starter_theme_support() {
+function halcyon_theme_support() {
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
@@ -191,8 +191,8 @@ function starter_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'startertheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'startertheme' ) // secondary nav in footer
+			'main-nav' => __( 'The Main Menu', 'halcyon' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'halcyon' ) // secondary nav in footer
 		)
 	);
 
@@ -203,16 +203,16 @@ function starter_theme_support() {
 		'comment-form'
 	) );
 
-} /* end starter theme support */
+} /* end halcyon theme support */
 
 
 /*********************
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using starter_related_posts(); )
-function starter_related_posts() {
-	echo '<ul id="starter-related-posts">';
+// Related Posts Function (call using halcyon_related_posts(); )
+function halcyon_related_posts() {
+	echo '<ul id="halcyon-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -230,19 +230,19 @@ function starter_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'startertheme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'halcyon' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end starter related posts function */
+} /* end halcyon related posts function */
 
 /*********************
 PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function starter_page_navi() {
+function halcyon_page_navi() {
   global $wp_query;
   $bignum = 999999999;
   if ( $wp_query->max_num_pages <= 1 )
@@ -267,15 +267,15 @@ RANDOM CLEANUP ITEMS
 *********************/
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function starter_filter_ptags_on_images($content){
+function halcyon_filter_ptags_on_images($content){
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
 // This removes the annoying […] to a Read More link
-function starter_excerpt_more($more) {
+function halcyon_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'startertheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'startertheme' ) .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'halcyon' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'halcyon' ) .'</a>';
 }
 
 
