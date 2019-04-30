@@ -13,7 +13,8 @@
 										'numberposts'	=> -1,
 										'post_type'		=> array (
 											'page',
-											'post'
+											'post',
+											'image_links'
 										),
 										'meta_key'		=> 'include_on_front',
 										'meta_value'	=> true
@@ -29,7 +30,11 @@
 										<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 											<li class="col-xs-5 col-sm-4 block">
+												<?php if (get_field('external_link') ) : ?>
+													<a href="<?php the_field('external_link'); ?>" <?php if (get_field('open_in_new_tab') ) : ?>target="_blank"<?php endif;?>>
+													<?php else : ?>
 												<a href="<?php the_permalink(); ?>">
+												<?php endif; ?>
 												<?php the_post_thumbnail('halcyon-front-page'); ?>
 												<div class="overlay">
 													<div>

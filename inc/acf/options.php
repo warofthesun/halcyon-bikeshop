@@ -6,18 +6,18 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Theme Settings',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+		'redirect'		=> true
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Home Page Hero',
-		'menu_title'	=> 'Home Page Hero',
+		'page_title' 	=> 'Home Page',
+		'menu_title'	=> 'Home Page',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
+		'page_title' 	=> 'Image Based Links',
+		'menu_title'	=> 'Image Based Links',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 

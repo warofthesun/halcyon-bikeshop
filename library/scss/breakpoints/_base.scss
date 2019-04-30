@@ -16,7 +16,14 @@ img {
 	image-rendering: auto;
 }
 
-#inner-header, #inner-footer {
+#inner-header {
+	flex-direction: row;
+	padding: 1em 0;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#inner-footer {
 	flex-direction: column;
 }
 
@@ -81,7 +88,7 @@ img {
 }
 
 .block-navigation {
-	justify-content: space-between;
+	justify-content: flex-start;
 
 	&__blocks {
 
@@ -268,13 +275,13 @@ HEADER STYLES
 	background-color: black;
 }
 
-	#logo {
-		margin: 0.75em 0;
+.logo {
+	width: 200px;
 
-		a {
-			color: $white;
-		}
+	img {
+		width: 100%;
 	}
+}
 
 /*********************
 NAVIGATION STYLES
