@@ -20,6 +20,7 @@
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
+					<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 				</div>
 
 			</footer>
@@ -29,7 +30,7 @@
 		<?php // all js scripts are loaded in library/halcyon.php ?>
 		<?php wp_footer(); ?>
 
-		
+
 
 	</body>
 

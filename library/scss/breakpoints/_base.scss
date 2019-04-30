@@ -33,6 +33,53 @@ img {
 	}
 }
 
+.slideshow {
+	 height: 100vh;
+	 max-height: 1200px;
+	 position: relative;
+	 z-index: 10;
+	 overflow: hidden;
+
+	 .slick-track {
+		 img {
+		 }
+	 }
+}
+
+.hero {
+	&__content {
+		padding: 1em;
+		position: absolute;
+		z-index: 20;
+		top: 0;
+		background-image: linear-gradient(35deg, rgba(255, 183, 183, 0.2), rgba(255, 218, 0, 0.2));
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		font-family: 'Helvetica Neue';
+
+		.logo {
+			width: 400px;
+			img {
+				width: 100%;
+			}
+		}
+
+		.tagline {
+			font-weight: bold;
+			font-size: 1.8em;
+			line-height: 1;
+
+			span {
+				display: block;
+				text-transform: uppercase;
+				font-size: 2.8em;
+				font-weight: 200;
+			}
+		}
+	}
+}
+
 .block-navigation {
 	justify-content: space-between;
 
@@ -48,6 +95,18 @@ img {
 				height: auto;
 			}
 
+			&:hover {
+				.overlay {
+					background: rgba(0,0,0,0.0);
+
+					> div {
+						border-top: 0px solid rgba(255,255,255,0);
+						border-bottom: 0px solid rgba(255,255,255,0);
+						color: rgba(255,255,255,0);
+					}
+				}
+			}
+
 			.overlay {
 				width: 95%;
 				height: 98%;
@@ -58,17 +117,19 @@ img {
 				justify-content: center;
 				align-items: center;
 				padding: 2em;
+				transition: all .5s;
 
 				> div {
-					border-top: 2px solid white;
-					border-bottom: 2px solid white;
+					border-top: 2px solid rgba(255,255,255,1);
+					border-bottom: 2px solid rgba(255,255,255,1);
 					width: 100%;
 					text-align: center;
 					padding: .2rem;
 					font-family: $sans-serif;
-					color: $white;
+					color: rgba(255,255,255,1);
 					text-transform: uppercase;
 					font-size: 2rem;
+					transition: all .5s;
 				}
 			}
 		}
@@ -204,7 +265,7 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: black;
 }
 
 	#logo {
@@ -256,6 +317,9 @@ and more scalable.
 	height: 0;
 	transition: all .5s;
 	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left: -.5em;
 
 	&.show {
 		opacity: 1;
@@ -266,18 +330,30 @@ and more scalable.
 	li {
 	border-bottom: 1px solid white;
 	text-align: center;
+	display: flex;
 
 		a {
 			display: block;
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
+		}
 
+		&:after {
+			content: "•";
+			margin-left: auto;
+			margin-right: auto;
+			justify-content: center;
+			align-self: center;
 		}
 
 		&:first-child {}
 
-		&:last-child {}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
 
 		/*
 		so you really have to rethink your dropdowns for mobile.

@@ -133,5 +133,14 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+	$('.slideshow').slick({
+    autoplay: true,
+		arrows: false,
+		fade: true,
+		pauseOnHover: false,
+  	cssEase: 'linear',
+		adaptiveHeight: false,
+		autoplaySpeed: 6000
+  });
 
 }); /* end of as page load scripts */

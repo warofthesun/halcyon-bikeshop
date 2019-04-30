@@ -31,6 +31,7 @@
             <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
@@ -50,14 +51,49 @@
 		<div id="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+
 				<?php if ( is_front_page() ) : ?>
-				<div style="height:100vh;background:red;padding:1em;">
+					<?php
+					$images = get_field('homepage_hero', 'options');
+					$size = 'large';
+
+					if( $images ): ?>
+					    <div class="slideshow">
+					        <?php foreach( $images as $image ): ?>
+					            <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+					        <?php endforeach; ?>
+					    </div>
+					<?php endif; ?>
+				<div class="hero__content">
 					<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
-						$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+						$logo = wp_get_attachment_image_src( $custom_logo_id , 'large' );
 
 					?>
-					<img src="<?php echo $logo[0]; ?>"></ing><br />line one<br />line two<br />navigation
+					<img src="<?php echo $logo[0]; ?>" class="logo"></img>
+					<div class="tagline">
+						NEW & USED FULL SERVICE
+						<span>bike shop</span>
+					</div>
+					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<?php wp_nav_menu(array(
+    					         'container' => false,                           // remove nav container
+    					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
+    					         'menu' => __( 'The Main Menu', 'halcyon' ),  // nav name
+    					         'menu_class' => 'nav top-nav ',               // adding custom nav class
+    					         'theme_location' => 'main-nav',                 // where it's located in the theme
+    					         'before' => '',                                 // before the menu
+        			               'after' => '',                                  // after the menu
+        			               'link_before' => '',                            // before each link
+        			               'link_after' => '',                             // after each link
+        			               'depth' => 0,                                   // limit the depth of the nav
+    					         'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+
+					</nav>
+					<div id="mobile-nav">
+						Menu <i class="fas fa-chevron-down"></i>
+					</div>
 				</div>
 				<?php else : ?>
 				<div id="inner-header" class="wrap row">
