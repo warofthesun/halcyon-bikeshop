@@ -1,3 +1,42 @@
+
+			<div class="store-information">
+				<h2>Contact</h2>
+				<div class="border"></div>
+				<div class="store-information__container">
+					<div class="phone-number"><?php the_field('phone_number', 'option'); ?></div>
+					<div class="address"><?php the_field('address', 'option'); ?></div>
+					<?php
+						// check if the repeater field has rows of data
+						if( have_rows('store_hours', 'option') ): ?>
+							<div class="hours">
+								<h3>hours</h3>
+								<ul>
+
+
+						 <?php	// loop through the rows of data
+						    while ( have_rows('store_hours', 'option') ) : the_row(); ?>
+
+
+						       <li>
+										 <?php the_sub_field('hours'); ?>
+									 </li>
+
+						  <?php  endwhile;
+
+						else :
+
+						    // no rows found
+
+						endif;
+
+						?>
+
+						</ul>
+					</div>
+				</div>
+				<div class="border"></div>
+				<?php the_field('store_map', 'option'); ?>
+			</div>
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="wrap row">

@@ -10,6 +10,10 @@ body {
 	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+
+	p {
+		font-size: 120%;
+	}
 }
 
 img {
@@ -64,6 +68,8 @@ img {
 		height: 100%;
 		color: #fff;
 		font-family: 'Helvetica Neue';
+		display: flex;
+		flex-direction: column;
 
 		.logo {
 			width: 400px;
@@ -82,6 +88,26 @@ img {
 				text-transform: uppercase;
 				font-size: 2.8em;
 				font-weight: 200;
+			}
+		}
+
+		.section-jump {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			margin-top: auto;
+			flex-direction: column;
+			text-align: center;
+			text-decoration: none;
+			color: $white;
+			font-size: 4em;
+
+			&:before {
+				content: "\f0d7";
+				font-family: "Font Awesome 5 Pro";
+				font-weight: 600;
+				line-height: 1;
+				margin-bottom: -.8em;
 			}
 		}
 	}
@@ -139,6 +165,85 @@ img {
 					transition: all .5s;
 				}
 			}
+		}
+	}
+}
+
+.store-information {
+	text-align: center;
+	font-family: $sans-serif;
+
+	&__container {
+		margin-top: 2em;
+		margin-bottom: 2em;
+
+		.phone-number {
+			font-size: 3em;
+			font-weight: 200;
+		}
+
+		.address {
+			font-size: 1.5em;
+		}
+
+		.hours {
+			ul {
+				padding: 0;
+
+				li {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	h2, h3 {
+		text-transform: uppercase;
+		font-weight: 200;
+		font-size: 5em;
+		letter-spacing: .03em;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	h3 {
+		font-size: 2em;
+		display: inline-block;
+		border-bottom: 1px solid;
+	}
+
+	.border {
+		width: 200px;
+		border-bottom: 1px solid;
+		margin: 0 auto;
+	}
+
+
+}
+
+.bon-slider {
+	&__header {
+		text-align: center;
+		font-size: 4.5em;
+		font-family: $sans-serif;
+		text-transform: uppercase;
+		font-weight: 200;
+		letter-spacing: .2em;
+		line-height: 1;
+		margin-bottom: 1em;
+
+		span {
+			display: block;
+			font-size: .3em;
+			letter-spacing: 0;
+			font-weight: 600;
+		}
+	}
+
+	.slideshow__bon {
+
+		img {
+			height: 100%;
 		}
 	}
 }
@@ -429,11 +534,11 @@ article {
 			background-color: $white;
 			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
+				text-align: center;
 			}
 
 			footer {
@@ -455,7 +560,18 @@ article {
 
 		.single-title {}
 
-		.page-title {}
+		.page-title {
+			font-size: 4em;
+			padding-bottom: .2em;
+			text-transform: uppercase;
+			font-weight: 300;
+			border-bottom: 1px solid;
+			text-align: center;
+			display: inline-block;
+			padding-left: 1em;
+			padding-right: 1em;
+			margin: 0 auto;
+		}
 
 		.entry-title {}
 

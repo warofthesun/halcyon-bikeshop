@@ -143,4 +143,21 @@ jQuery(document).ready(function($) {
 		autoplaySpeed: 6000
   });
 
+	$('.slideshow__bon').slick({
+    autoplay: true,
+		arrows: false,
+		dots: false,
+		draggable: true,
+		variableWidth: true,
+		centerMode: true,
+  	cssEase: 'linear',
+		adaptiveHeight: true,
+		autoplaySpeed: 3000
+  });
+
+	$('.section-jump').click(function(){
+    $("body").animate({ scrollTop: window.pageYOffset + $(window).height()}, 600);
+    return false;
+ });
+
 }); /* end of as page load scripts */

@@ -266,5 +266,26 @@ include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
 include_once( get_stylesheet_directory() . '/inc/acf/options.php' );
 
+add_shortcode( 'bon_slider', 'bon_slider' );
+function bon_slider() {
+	$images = get_field('bon_slider');
+  $size = 'full';
+
+	ob_start();
+  if ($images) :
+  echo '<section class="bon-slider">
+  <div class="bon-slider__header">
+  <span>VOTED BEST OF</span>
+  NASHVILLE
+  </div>
+  <div class="slideshow__bon">';
+		foreach( $images as $image ) :
+			echo wp_get_attachment_image( $image['ID'], $size );
+		endforeach;
+  echo '<div></section>';
+  endif;
+	return ob_get_clean();
+}
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
