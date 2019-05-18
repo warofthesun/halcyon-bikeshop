@@ -1,16 +1,16 @@
 <?php
 /*
- Template Name: Custom Page Example
+ Template Name: Links Page
 */
 ?>
-<!--page-custom-->
+<!--page-links-->
 <?php get_header(); ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap row">
 
-						<main id="main" class="col-xs-12 col-sm-8 col-lg-9 " role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -20,16 +20,36 @@
 
 									<h1 class="page-title"><?php the_title(); ?></h1>
 
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'halcyon' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-
 								</header>
 
 								<section class="entry-content " itemprop="articleBody">
 
 									<?php	the_content(); ?>
+									<?php
+										// check if the repeater field has rows of data
+										if( have_rows('image_links') ): ?>
+											<ul class="row block-navigation block-navigation__blocks">
+
+										  <?php while ( have_rows('image_links') ) : the_row(); ?>
+												<li class="col-xs-5 col-sm-4 block">
+
+													<a href="<?php the_sub_field('link'); ?>" target="_blank">
+  												<?php
+													$image = get_sub_field('image');
+													$size = 'halcyon-front-page'; ?>
+
+  												<?php echo wp_get_attachment_image( $image, $size ); ?>
+  												<div class="overlay">
+  													<div>
+  															<?php the_sub_field('link_title'); ?>
+  													</div>
+  												</div>
+  												</a>
+
+											 <?php endwhile; ?>
+										 		</li>
+											</ul>
+									<?php	else : endif; ?>
 
 								</section>
 
@@ -61,8 +81,6 @@
 							<?php endif; ?>
 
 						</main>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

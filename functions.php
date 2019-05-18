@@ -67,7 +67,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'halcyon-thumb-600', 600, 150, true );
 add_image_size( 'halcyon-thumb-300', 300, 100, true );
-add_image_size( 'halcyon-front-page', 500, 500, true );
+add_image_size( 'halcyon-front-page', 320, 320, array ('center', 'top') );
 add_image_size( 'gallery-image', 680, 450, true );
 
 
