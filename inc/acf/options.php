@@ -21,10 +21,4 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Image Based Links',
-		'menu_title'	=> 'Image Based Links',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
 }
