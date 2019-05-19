@@ -594,6 +594,37 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+#tribe-events-content a,
+.tribe-events-adv-list-widget .tribe-events-widget-link a,
+.tribe-events-adv-list-widget .tribe-events-widget-link a:hover,
+.tribe-events-back a,
+.tribe-events-back a:hover,
+.tribe-events-event-meta a,
+.tribe-events-list-widget .tribe-events-widget-link a,
+.tribe-events-list-widget .tribe-events-widget-link a:hover,
+ul.tribe-events-sub-nav a,
+ul.tribe-events-sub-nav a:hover {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.tribe-events-page-title {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 1.5em; }
+
+.tribe-events-single-event-title {
+  display: none; }
+
+.tribe-events-meta-group {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.article-header.event {
+  margin-bottom: 0;
+  padding-bottom: .5em; }
+
+.page-title.event {
+  font-size: 2.5em; }
+
 .container-fluid,
 .container {
   margin-right: auto;

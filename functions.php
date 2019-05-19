@@ -20,7 +20,7 @@ function halcyon_ahoy() {
   load_theme_textdomain( 'halcyon', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  require_once( 'library/custom-post-type.php' );
+  // require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
   add_action( 'init', 'halcyon_head_cleanup' );
@@ -80,6 +80,38 @@ function halcyon_custom_image_sizes( $sizes ) {
         'halcyon-thumb-300' => __('300px by 100px'),
     ) );
 }
+
+/*
+ * EXAMPLE OF CHANGING ANY TEXT (STRING) IN THE EVENTS CALENDAR
+ * See the codex to learn more about WP text domains:
+ * http://codex.wordpress.org/Translating_WordPress#Localization_Technology
+ * Example Tribe domains: 'tribe-events-calendar', 'tribe-events-calendar-pro'...
+ */
+function tribe_custom_theme_text ( $translation, $text, $domain ) {
+
+	// Put your custom text here in a key => value pair
+	// Example: 'Text you want to change' => 'This is what it will be changed to'
+	// The text you want to change is the key, and it is case-sensitive
+	// The text you want to change it to is the value
+	// You can freely add or remove key => values, but make sure to separate them with a comma
+	// This example changes the label "Venue" to "Location", and "Related Events" to "Similar Events"
+	$custom_text = array(
+		'Venue' => 'Location',
+	);
+
+  // If this text domain starts with "tribe-", "the-events-", or "event-" and we have replacement text
+    	if( (strpos($domain, 'tribe-') === 0 || strpos($domain, 'the-events-') === 0 || strpos($domain, 'event-') === 0) && array_key_exists($translation, $custom_text) ) {
+		$translation = $custom_text[$translation];
+	}
+
+    return $translation;
+}
+add_filter('gettext', 'tribe_custom_theme_text', 20, 3);
+
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 
 // TGM Plugin Activation Class
 require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');
