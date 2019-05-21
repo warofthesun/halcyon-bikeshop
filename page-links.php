@@ -33,7 +33,7 @@
 										  <?php while ( have_rows('image_links') ) : the_row(); ?>
 												<li class="col-xs-5 col-sm-4 block">
 
-													<a href="<?php the_sub_field('link'); ?>" target="_blank">
+													<a href="<?php the_sub_field('link'); ?>">
   												<?php
 													$image = get_sub_field('image');
 													$size = 'halcyon-front-page'; ?>

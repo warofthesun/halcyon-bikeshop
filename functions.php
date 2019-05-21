@@ -97,6 +97,8 @@ function tribe_custom_theme_text ( $translation, $text, $domain ) {
 	// This example changes the label "Venue" to "Location", and "Related Events" to "Similar Events"
 	$custom_text = array(
 		'Venue' => 'Location',
+    'Category: ' => 'Style: ',
+    'Additional information' => 'Additional Details'
 	);
 
   // If this text domain starts with "tribe-", "the-events-", or "event-" and we have replacement text
@@ -112,6 +114,16 @@ function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+/**
+ * Changes the redirect URL for the Return To Shop button in the cart.
+ *
+ * @return string
+ */
+function wc_empty_cart_redirect_url() {
+	return '//halcyonbike.com/shop';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
 
 // TGM Plugin Activation Class
 require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');
@@ -194,6 +206,10 @@ function halcyon_register_sidebars() {
 	*/
 } // don't remove this bracket!
 
+// WOOCOMMERCE
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+//add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5 );
+
 
 /************* COMMENT LAYOUT *********************/
 
@@ -236,7 +252,7 @@ function halcyon_comments( $comment, $args, $depth ) {
 
 
 function halcyon_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Merriweather:400,700');
+  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Montserrat:300,400,700|Noto+Serif&display=swap');
 }
 
 add_action('wp_enqueue_scripts', 'halcyon_fonts');

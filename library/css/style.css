@@ -604,7 +604,7 @@ probably best not to use it. I mean, were you going to anyway? */
 .tribe-events-list-widget .tribe-events-widget-link a:hover,
 ul.tribe-events-sub-nav a,
 ul.tribe-events-sub-nav a:hover {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Montserrat", Helvetica, Arial, sans-serif; }
 
 .tribe-events-page-title {
   font-size: 1em;
@@ -616,7 +616,7 @@ ul.tribe-events-sub-nav a:hover {
   display: none; }
 
 .tribe-events-meta-group {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Montserrat", Helvetica, Arial, sans-serif; }
 
 .article-header.event {
   margin-bottom: 0;
@@ -624,6 +624,106 @@ ul.tribe-events-sub-nav a:hover {
 
 .page-title.event {
   font-size: 2.5em; }
+
+.products .product-category a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+  .products .product-category a:hover .overlay {
+    background: rgba(0, 0, 0, 0); }
+  .products .product-category a .overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
+  .products .product-category a img {
+    position: relative;
+    margin: 0 !important; }
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt, .woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+#wqv-quick-view-content .wqv-product-info .single_add_to_cart_button.button:not(.components-button):not(.customize-partial-edit-shortcut-button) {
+  background-color: #dc5034;
+  color: #fff; }
+  .woocommerce #respond input#submit.alt:hover,
+  .woocommerce a.button.alt:hover,
+  .woocommerce button.button.alt:hover,
+  .woocommerce input.button.alt:hover, .woocommerce #respond input#submit:hover,
+  .woocommerce a.button:hover,
+  .woocommerce button.button:hover,
+  .woocommerce input.button:hover,
+  #wqv-quick-view-content .wqv-product-info .single_add_to_cart_button.button:not(.components-button):not(.customize-partial-edit-shortcut-button):hover {
+    background-color: #c13c21;
+    color: #fff; }
+
+a#sp-wqv-view-button.button.sp-wqv-view-button,
+#wps-slider-section .button.sp-wqv-view-button,
+#wpsp-slider-section .button.sp-wqv-view-button {
+  background: #fff;
+  color: #dc5034; }
+  a#sp-wqv-view-button.button.sp-wqv-view-button:hover,
+  #wps-slider-section .button.sp-wqv-view-button:hover,
+  #wpsp-slider-section .button.sp-wqv-view-button:hover {
+    background: #fff;
+    color: #c13c21; }
+
+.woocommerce-loop-category__title {
+  position: absolute;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  width: 80%;
+  text-align: center;
+  padding: .2rem;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem !important;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  line-height: 1.3;
+  -webkit-transition: all .4s;
+  transition: all .4s; }
+  .woocommerce-loop-category__title:hover {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0); }
+  .woocommerce-loop-category__title .count {
+    display: none; }
+
+.woocommerce div.product form.cart div.quantity,
+.wqv-product-info .quantity {
+  display: none; }
+
+.woocommerce-product-gallery__image {
+  margin-bottom: .7em; }
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 20%; }
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: #000;
+  font-weight: bold; }
 
 .container-fluid,
 .container {
@@ -1389,7 +1489,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .accent-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 0.9em;
@@ -1472,7 +1572,7 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   background-color: #f7f8fa;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1718,7 +1818,7 @@ BASE (MOBILE) SIZE
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Merriweather", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-family: "Montserrat", "Georgia", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -1763,7 +1863,7 @@ img {
     border-bottom: 0px; }
 
 .slideshow {
-  max-height: 1200px;
+  max-height: 100vh;
   position: relative;
   z-index: 10;
   overflow: hidden; }
@@ -1776,6 +1876,7 @@ img {
   background-image: linear-gradient(35deg, rgba(255, 183, 183, 0.2), rgba(255, 218, 0, 0.2));
   width: 100%;
   height: 100%;
+  max-height: 100vh;
   color: #fff;
   font-family: 'Helvetica Neue';
   display: -webkit-box;
@@ -1841,7 +1942,7 @@ img {
         border-bottom: 2px solid rgba(255, 255, 255, 0);
         color: rgba(255, 255, 255, 0); }
     .block-navigation__blocks .block .overlay {
-      width: 95%;
+      width: 96%;
       height: 98%;
       background: rgba(0, 0, 0, 0.5);
       top: 0%;
@@ -1864,7 +1965,7 @@ img {
         width: 100%;
         text-align: center;
         padding: .2rem;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Montserrat", Helvetica, Arial, sans-serif;
         color: white;
         text-transform: uppercase;
         font-size: 2rem;
@@ -1874,7 +1975,7 @@ img {
 
 .store-information {
   text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Montserrat", Helvetica, Arial, sans-serif; }
   .store-information__container {
     margin-top: 2em;
     margin-bottom: 2em; }
@@ -1906,7 +2007,7 @@ img {
 .bon-slider__header {
   text-align: center;
   font-size: 4.5em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: .2em;
@@ -1971,12 +2072,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #2980b9;
+  color: #dc5034;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #216693; }
+    color: #c13c21; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -1991,7 +2092,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -2074,7 +2175,7 @@ and more scalable.
   height: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   margin-left: -.5em;
@@ -2705,7 +2806,7 @@ DESKTOP
 *********************/
 @media only screen and (min-width: 75em) {
   .wrap {
-    width: 1040px; } }
+    width: 1240px; } }
 
 /*********************
 LARGE VIEWING SIZE

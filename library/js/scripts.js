@@ -127,11 +127,8 @@ jQuery(document).ready(function($) {
         $(".nav").toggleClass("show");
 				$("#mobile-nav").toggleClass("show");
 			});
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+
+	$( ".woocommerce-loop-category__title" ).before( "<div class='overlay'></div>" );
 
 	$('.slideshow').slick({
     autoplay: true,

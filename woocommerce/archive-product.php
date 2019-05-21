@@ -1,4 +1,4 @@
-<!-- product archive -->
+<!-- archive product -->
 <?php
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive
@@ -29,10 +29,15 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
+<div id="content">
 
-<header class="woocommerce-products-header">
+	<div id="inner-content" class="wrap row hentry">
+
+			<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+<header class="article-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+		<h1  class="page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
 
 	<?php
@@ -96,13 +101,11 @@ if ( woocommerce_product_loop() ) {
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action( 'woocommerce_after_main_content' );
+do_action( 'woocommerce_after_main_content' ); ?>
 
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
+</main>
+</div>
+</div>
 
-get_footer( 'shop' );
+
+<?php get_footer( 'shop' );
