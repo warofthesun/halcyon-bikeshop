@@ -106,7 +106,38 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
 }
 
 .woocommerce div.product p.price,
-.woocommerce div.product span.price {
+.woocommerce div.product span.price,
+ {
   color: $black;
   font-weight: bold;
+}
+
+.woocommerce-Tabs-panel {
+  h2 {
+    display: none;
+  }
+}
+
+.tagged_as, .posted_in {
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.woocommerce ul.products li.product .price {
+  color: $text-color;
+  font-weight: bold;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+  color: $black;
+  font-size: 1.2em;
+}
+
+.woocommerce div.product .stock {
+  color: $meta-gray;
+  font-style: italic;
 }

@@ -110,10 +110,15 @@ function tribe_custom_theme_text ( $translation, $text, $domain ) {
 }
 add_filter('gettext', 'tribe_custom_theme_text', 20, 3);
 
-function mytheme_add_woocommerce_support() {
+// WOOCOMMERCE Customization
+
+function halcyon_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'halcyon_add_woocommerce_support' );
 
 /**
  * Changes the redirect URL for the Return To Shop button in the cart.
@@ -124,6 +129,26 @@ function wc_empty_cart_redirect_url() {
 	return '//halcyonbike.com/shop';
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+/**
+ * Rename product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+function woo_rename_tabs( $tabs ) {
+
+	$tabs['description']['title'] = __( 'More Information' );		// Rename the description tab
+	//$tabs['reviews']['title'] = __( 'Ratings' );				// Rename the reviews tab
+	//$tabs['additional_information']['title'] = __( 'Product Data' );	// Rename the additional information tab
+
+  global $product;
+
+	if( $product->has_attributes() || $product->has_dimensions() || $product->has_weight() ) { // Check if product has attributes, dimensions or weight
+		$tabs['additional_information']['title'] = __( 'Product Data' );	// Rename the additional information tab
+	}
+
+	return $tabs;
+
+}
 
 // TGM Plugin Activation Class
 require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');
