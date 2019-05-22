@@ -16,6 +16,10 @@ body {
 	}
 }
 
+#container {
+	overflow-x: hidden;
+}
+
 img {
 	image-rendering: auto;
 }
@@ -442,7 +446,7 @@ and more scalable.
 		height: 100%;
 	}
 
-	li {
+	>li {
 	border-bottom: 1px solid white;
 	text-align: center;
 	display: flex;
@@ -510,6 +514,32 @@ and more scalable.
 		a {}
 
 	}  /* end current highlighters */
+
+	.menu-item-has-children {
+		>a:after {
+			content: "\f322";
+			font-family: 'Font Awesome 5 Pro', sans-serif;
+			font-size: .5em;
+			margin-left: .3em;
+			line-height: 1;
+			margin-top: -.5em;
+			display: inline-block;
+		}
+	}
+
+	.sub-menu {
+		.menu-item-has-children {
+			>a:after {
+				content: "\f324";
+				font-family: 'Font Awesome 5 Pro', sans-serif;
+				font-size: .5em;
+				margin-left: .3em;
+				line-height: 1;
+				margin-top: -.5em;
+				display: inline-block;
+			}
+		}
+	}
 
 } /* end .nav */
 

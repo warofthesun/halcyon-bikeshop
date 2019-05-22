@@ -226,7 +226,6 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #000;
     margin-top: 0; }
   .nav li {
     /*
@@ -244,8 +243,7 @@ NAVIGATION STYLES
         text-decoration: underline; }
     .nav li ul.sub-menu,
     .nav li ul.children {
-      margin-top: 0;
-      border: 1px solid #ccc;
+      margin-top: 2em;
       border-top: 0;
       position: absolute;
       visibility: hidden;
@@ -253,6 +251,8 @@ NAVIGATION STYLES
       /* highlight sub-menu current page */ }
       .nav li ul.sub-menu li,
       .nav li ul.children li {
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.5);
         /*
 				if you need to go deeper, go nuts
 				just remember deeper menus suck
@@ -263,15 +263,18 @@ NAVIGATION STYLES
           padding-left: 10px;
           border-right: 0;
           display: block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
+          border-bottom: 1px solid #ccc;
+          font-size: .8em;
+          margin-right: .5em; }
         .nav li ul.sub-menu li:last-child a,
         .nav li ul.children li:last-child a {
           border-bottom: 0; }
         .nav li ul.sub-menu li ul,
         .nav li ul.children li ul {
           top: 0;
-          left: 100%; }
+          left: 100%;
+          white-space: nowrap;
+          margin-top: 0; }
     .nav li:hover > ul {
       top: auto;
       visibility: visible; }
@@ -316,8 +319,15 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-.footer-links ul li {
-  /*
+.footer-links {
+  position: relative; }
+  .footer-links ul .sub-menu {
+    margin-bottom: 3em;
+    margin-top: 0;
+    bottom: 0; }
+  .footer-links ul li {
+    background-color: rgba(0, 0, 0, 0.6);
+    /*
 			be careful with the depth of your menus.
 			it's very rare to have multi-depth menus in
 			the footer.

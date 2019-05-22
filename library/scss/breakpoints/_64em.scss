@@ -29,7 +29,6 @@ NAVIGATION STYLES
 
 
 	ul {
-		background:$black;
 		margin-top:0;
 	}
 	li {
@@ -56,21 +55,23 @@ NAVIGATION STYLES
 		*/
 		ul.sub-menu,
 		ul.children {
-			margin-top: 0;
-			border: 1px solid #ccc;
+			margin-top: 2em;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
 
 			li {
+				text-align: left;
+				background-color: rgba($black, 0.5);
 
 				a {
 					padding-left: 10px;
 					border-right: 0;
 					display: block;
-					width: 180px;
 					border-bottom: 1px solid #ccc;
+					font-size: .8em;
+					margin-right: .5em;
 
 					&:hover,
 					&:focus {}
@@ -93,8 +94,10 @@ NAVIGATION STYLES
 				for usability. k, bai.
 				*/
 				ul {
-					top:0;
-					left:100%;
+					top: 0;
+					left: 100%;
+					white-space: nowrap;
+					margin-top: 0;
 				}
 			}
 
@@ -256,8 +259,15 @@ of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
 .footer-links {
+	position: relative;
 	ul {
+		.sub-menu {
+			margin-bottom: 3em;
+			margin-top: 0;
+			bottom: 0;
+		}
 		li {
+			background-color: rgba($black, 0.6);
 			a {
 				&:hover {}
 			}
