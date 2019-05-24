@@ -49,13 +49,26 @@ img {
 }
 
 .slideshow {
-	 max-height: 100vh;
+	
+	@media only screen and (max-width: 64em) {
+		height: 500px;
+	}
+
 	 position: relative;
 	 z-index: 10;
 	 overflow: hidden;
 
+	 @media only screen and (min-width: 64em) {
+		 max-height: 100vh;
+	 }
+
 	 .slick-track {
 		 img {
+			 @media only screen and (max-width: 64em) {
+				 height: 500px;
+				 width: auto !important;
+				 left: -25% !important;
+			 }
 		 }
 	 }
 }
@@ -68,7 +81,12 @@ img {
 		top: 0;
 		background-image: linear-gradient(35deg, rgba(255, 183, 183, 0.2), rgba(255, 218, 0, 0.2));
 		width: 100%;
-		height: 100%;
+		height: 500px;
+
+		@media only screen and (min-width: 64em) {
+			height: 100%;
+		}
+
 		max-height: 100vh;
 		color: #fff;
 		font-family: 'Helvetica Neue';
