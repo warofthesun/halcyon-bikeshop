@@ -31,7 +31,7 @@
 											<ul class="row block-navigation block-navigation__blocks">
 
 										  <?php while ( have_rows('image_links') ) : the_row(); ?>
-												<li class="col-xs-5 col-sm-4 block">
+												<li class="block">
 
 													<a href="<?php the_sub_field('link'); ?>">
   												<?php
