@@ -1924,13 +1924,17 @@ img {
     .hero__content {
       height: 100%; } }
   .hero__content .logo {
-    width: 400px; }
+    width: 100%;
+    max-width: 400px; }
     .hero__content .logo img {
       width: 100%; }
   .hero__content .tagline {
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.7em;
     line-height: 1; }
+    @media only screen and (min-width: 48em) {
+      .hero__content .tagline {
+        font-size: 1.8em; } }
     .hero__content .tagline span {
       display: block;
       text-transform: uppercase;
@@ -1961,13 +1965,18 @@ img {
       margin-bottom: -.8em; }
 
 .block-navigation {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
   .block-navigation__blocks .block {
     margin-bottom: 1em;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0;
+    width: calc((1/2 * 100%) - 1em);
+    line-height: 0; }
+    @media only screen and (min-width: 48em) {
+      .block-navigation__blocks .block {
+        width: calc((1/3 * 100%) - 1em); } }
     .block-navigation__blocks .block img {
       width: 100%;
       height: auto;
@@ -1979,8 +1988,8 @@ img {
         border-bottom: 2px solid rgba(255, 255, 255, 0);
         color: rgba(255, 255, 255, 0); }
     .block-navigation__blocks .block .overlay {
-      width: 96%;
-      height: 98%;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.5);
       top: 0%;
       position: absolute;
@@ -1993,9 +2002,12 @@ img {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      padding: 2em;
+      padding: .5em;
       -webkit-transition: all .5s;
       transition: all .5s; }
+      @media only screen and (min-width: 48em) {
+        .block-navigation__blocks .block .overlay {
+          padding: 2em; } }
       .block-navigation__blocks .block .overlay > div {
         border-top: 2px solid white;
         border-bottom: 2px solid white;
@@ -2005,10 +2017,13 @@ img {
         font-family: "Montserrat", Helvetica, Arial, sans-serif;
         color: white;
         text-transform: uppercase;
-        font-size: 2rem;
+        font-size: 1.4rem;
         -webkit-transition: all .5s;
         transition: all .5s;
         line-height: 1.3; }
+        @media only screen and (min-width: 48em) {
+          .block-navigation__blocks .block .overlay > div {
+            font-size: 2rem; } }
 
 .store-information {
   text-align: center;
@@ -2168,7 +2183,8 @@ HEADER STYLES
   position: relative; }
 
 .logo {
-  width: 200px; }
+  width: 100%;
+  max-width: 200px; }
   .logo img {
     width: 100%; }
 
@@ -2185,14 +2201,15 @@ and more scalable.
 */
 #mobile-nav {
   text-align: center;
-  margin-bottom: 1em;
-  margin-top: -2em;
+  margin-top: auto;
+  text-transform: uppercase;
+  font-weight: bold;
   -webkit-transition: all .5s;
   transition: all .5s; }
   #mobile-nav.show {
     margin-top: 0em;
     padding: .5em;
-    background-color: white; }
+    background-color: #000; }
     #mobile-nav.show .fa-chevron-down {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
@@ -2215,10 +2232,12 @@ and more scalable.
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
-  margin-left: -.5em;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
+  @media only screen and (max-width: 48em) {
+    .nav {
+      background: rgba(0, 0, 0, 0.7); } }
   .nav.show {
     opacity: 1;
     display: -webkit-box;
@@ -2231,6 +2250,10 @@ and more scalable.
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /*
 		so you really have to rethink your dropdowns for mobile.
 		you don't want to have it expand too much because the
@@ -2238,6 +2261,12 @@ and more scalable.
 		depend on the project. Here's some great info on it:
 		http://www.alistapart.com/articles/organizing-mobile/
 		*/ }
+    @media only screen and (min-width: 48em) {
+      .nav > li {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row; } }
     .nav > li a {
       display: block;
       color: #fff;
@@ -2254,9 +2283,12 @@ and more scalable.
           align-self: center; }
     .nav > li:last-child:after {
       display: none; }
-    .nav > li ul.sub-menu li a,
-    .nav > li ul.children li a {
-      padding-left: 30px; }
+    .nav > li ul.sub-menu,
+    .nav > li ul.children {
+      margin: 0; }
+      .nav > li ul.sub-menu li a,
+      .nav > li ul.children li a {
+        padding-left: 30px; }
   .nav .menu-item-has-children > a:after {
     content: "\f322";
     font-family: 'Font Awesome 5 Pro', sans-serif;
@@ -2786,18 +2818,23 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li,
         .nav li ul.children li {
           text-align: left;
-          background-color: rgba(0, 0, 0, 0.5);
+          background-color: rgba(0, 0, 0, 0.3);
           /*
 				if you need to go deeper, go nuts
 				just remember deeper menus suck
 				for usability. k, bai.
 				*/ }
+          .nav li ul.sub-menu li:first-of-type,
+          .nav li ul.children li:first-of-type {
+            border-radius: 4px 4px 0 0; }
+          .nav li ul.sub-menu li:last-of-type,
+          .nav li ul.children li:last-of-type {
+            border-radius: 0 0 4px 4px; }
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             padding-left: 10px;
             border-right: 0;
             display: block;
-            border-bottom: 1px solid #ccc;
             font-size: .8em;
             margin-right: .5em; }
           .nav li ul.sub-menu li:last-child a,
@@ -2852,11 +2889,11 @@ mobile. Make sure to double check these!
   .footer-links {
     position: relative; }
     .footer-links ul .sub-menu {
-      margin-bottom: 3em;
+      margin-bottom: 3em !important;
       margin-top: 0;
       bottom: 0; }
     .footer-links ul li {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.6) !important;
       /*
 			be careful with the depth of your menus.
 			it's very rare to have multi-depth menus in

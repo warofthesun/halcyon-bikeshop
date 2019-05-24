@@ -13,19 +13,19 @@
 									<ul class="row block-navigation block-navigation__blocks">
 
 									<?php while ( have_rows('image_links', 'option') ) : the_row(); ?>
-										<li class="col-xs-5 col-sm-4 block">
+										<li class="block">
 
 											<a href="<?php the_sub_field('link'); ?>">
-											<?php
-											$image = get_sub_field('image');
-											$size = 'halcyon-front-page'; ?>
+												<?php
+												$image = get_sub_field('image');
+												$size = 'halcyon-front-page'; ?>
 
-											<?php echo wp_get_attachment_image( $image, $size ); ?>
-											<div class="overlay">
-												<div>
-														<?php the_sub_field('link_title'); ?>
+												<?php echo wp_get_attachment_image( $image, $size ); ?>
+												<div class="overlay">
+													<div>
+															<?php the_sub_field('link_title'); ?>
+													</div>
 												</div>
-											</div>
 											</a>
 
 									 <?php endwhile; ?>

@@ -63,13 +63,20 @@ NAVIGATION STYLES
 
 			li {
 				text-align: left;
-				background-color: rgba($black, 0.5);
+				background-color: rgba($black, 0.3);
+
+				&:first-of-type {
+					border-radius: 4px 4px 0 0;
+				}
+
+				&:last-of-type {
+					border-radius: 0 0 4px 4px;
+				}
 
 				a {
 					padding-left: 10px;
 					border-right: 0;
 					display: block;
-					border-bottom: 1px solid #ccc;
 					font-size: .8em;
 					margin-right: .5em;
 
@@ -262,12 +269,12 @@ mobile. Make sure to double check these!
 	position: relative;
 	ul {
 		.sub-menu {
-			margin-bottom: 3em;
+			margin-bottom: 3em !important;
 			margin-top: 0;
 			bottom: 0;
 		}
 		li {
-			background-color: rgba($black, 0.6);
+			background-color: rgba($black, 0.6) !important;
 			a {
 				&:hover {}
 			}

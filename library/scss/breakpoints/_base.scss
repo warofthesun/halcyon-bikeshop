@@ -49,7 +49,7 @@ img {
 }
 
 .slideshow {
-	
+
 	@media only screen and (max-width: 64em) {
 		height: 500px;
 	}
@@ -94,7 +94,8 @@ img {
 		flex-direction: column;
 
 		.logo {
-			width: 400px;
+			width: 100%;
+			max-width: 400px;
 			img {
 				width: 100%;
 			}
@@ -102,7 +103,12 @@ img {
 
 		.tagline {
 			font-weight: bold;
-			font-size: 1.8em;
+			font-size: 1.7em;
+
+			@media only screen and (min-width: 48em) {
+				font-size: 1.8em;
+			}
+
 			line-height: 1;
 
 			span {
@@ -136,7 +142,7 @@ img {
 }
 
 .block-navigation {
-	justify-content: flex-start;
+	justify-content: space-around;
 
 	&__blocks {
 
@@ -144,6 +150,13 @@ img {
 			margin-bottom: 1em;
 			position: relative;
 			overflow: hidden;
+			padding: 0;
+			width: calc((1/2 * 100%) - 1em);
+			line-height: 0;
+
+			@media only screen and (min-width: 48em) {
+				width: calc((1/3 * 100%) - 1em);
+			}
 
 			img {
 				width: 100%;
@@ -164,15 +177,19 @@ img {
 			}
 
 			.overlay {
-				width: 96%;
-				height: 98%;
+				width: 100%;
+				height: 100%;
 				background: rgba(0,0,0,0.5);
 				top: 0%;
 				position: absolute;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				padding: 2em;
+				padding: .5em;
+
+				@media only screen and (min-width: 48em) {
+					padding: 2em;
+				}
 				transition: all .5s;
 
 				> div {
@@ -184,7 +201,12 @@ img {
 					font-family: $sans-serif;
 					color: rgba(255,255,255,1);
 					text-transform: uppercase;
-					font-size: 2rem;
+					font-size: 1.4rem;
+
+					@media only screen and (min-width: 48em) {
+						font-size: 2rem;
+					}
+
 					transition: all .5s;
 					line-height: 1.3;
 				}
@@ -406,7 +428,9 @@ HEADER STYLES
 }
 
 .logo {
-	width: 200px;
+	width: 100%;
+	max-width: 200px;
+
 
 	img {
 		width: 100%;
@@ -427,14 +451,15 @@ and more scalable.
 */
 #mobile-nav {
 	text-align: center;
-	margin-bottom: 1em;
-	margin-top:-2em;
+	margin-top: auto;
+	text-transform: uppercase;
+	font-weight: bold;
 	transition: all .5s;
 
 	&.show {
 		margin-top: 0em;
 		padding: .5em;
-		background-color: white;
+		background-color: $black;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);
@@ -456,7 +481,10 @@ and more scalable.
 	font-family: $sans-serif;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-left: -.5em;
+
+	@media only screen and (max-width: 48em) {
+		background: rgba(0,0,0,0.7);
+	}
 
 	&.show {
 		opacity: 1;
@@ -468,6 +496,11 @@ and more scalable.
 	border-bottom: 1px solid white;
 	text-align: center;
 	display: flex;
+	flex-direction: column;
+
+	@media only screen and (min-width: 48em) {
+		flex-direction: row;
+	}
 
 		a {
 			display: block;
@@ -501,6 +534,7 @@ and more scalable.
 		*/
 		ul.sub-menu,
 		ul.children {
+			margin: 0;
 
 			li {
 
