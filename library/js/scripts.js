@@ -154,6 +154,7 @@ jQuery(document).ready(function($) {
 
 	$('.section-jump').click(function(){
     $("body").animate({ scrollTop: window.pageYOffset + $(window).height()}, 600);
+		//console.log('hey');
     return false;
  });
 

@@ -58,7 +58,7 @@
 											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'halcyon' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'halcyon' ); ?></p>
+												<p><?php _e( '', 'halcyon' ); ?></p>
 										</footer>
 									</article>
 

@@ -58,7 +58,7 @@
 											<p><?php _e( 'Try your search again.', 'halcyon' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the search.php template.', 'halcyon' ); ?></p>
+												<p><?php _e( '', 'halcyon' ); ?></p>
 										</footer>
 									</article>
 

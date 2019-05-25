@@ -76,8 +76,6 @@ add_filter( 'image_size_names_choose', 'halcyon_custom_image_sizes' );
 function halcyon_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'gallery-image' => __('Gallery Image'),
-        'halcyon-thumb-600' => __('600px by 150px'),
-        'halcyon-thumb-300' => __('300px by 100px'),
     ) );
 }
 
@@ -149,6 +147,7 @@ function woo_rename_tabs( $tabs ) {
 	return $tabs;
 
 }
+
 
 // TGM Plugin Activation Class
 require_once locate_template('library/tgm-plugin-activation/class-tgm-plugin-activation.php');

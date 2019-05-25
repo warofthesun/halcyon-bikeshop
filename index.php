@@ -10,21 +10,21 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( ' single-post' ); ?> role="article">
-								<div class="hero--image"><?php the_post_thumbnail('gallery-image'); ?></div>
+
 								<header class="article-header">
 
 									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									<p class="byline entry-meta vcard">
-	                      <?php printf( __( 'Posted', 'halcyon' ).' %1$s %2$s',
+	                      <?php printf( __( '', 'halcyon' ).' %1$s %2$s',
 	       								/* the time the post was published */
 	       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 	       								/* the author of the post */
-	       								'<span class="by">'.__( 'by', 'halcyon').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+	       								'- <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
 	    							); ?>
 									</p>
 
 								</header>
-
+								<div class="hero--image"><?php the_post_thumbnail('gallery-image'); ?></div>
 								<section class="entry-content ">
 									<?php the_excerpt(); ?>
 								</section>
@@ -58,7 +58,7 @@
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'halcyon' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'halcyon' ); ?></p>
+												<p><?php _e( '', 'halcyon' ); ?></p>
 										</footer>
 									</article>
 

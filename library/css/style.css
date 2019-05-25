@@ -216,7 +216,7 @@ dl,
 menu,
 ol,
 ul {
-  margin: 1em 0; }
+  margin: 1em; }
 
 dd {
   margin: 0; }
@@ -229,8 +229,7 @@ menu {
 
 ol,
 ul {
-  padding: 0;
-  list-style-type: none; }
+  padding: 0; }
 
 /*
  * Corrects list images handled incorrectly in IE7.
@@ -1867,6 +1866,8 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  #inner-header .logo {
+    max-width: 200px !important; }
 
 #inner-footer {
   -webkit-box-orient: vertical;
@@ -1957,12 +1958,18 @@ img {
     text-decoration: none;
     color: #fff;
     font-size: 4em; }
+    .hero__content .section-jump:hover {
+      color: #dc5034; }
+      .hero__content .section-jump:hover:before {
+        margin-bottom: -.4em; }
     .hero__content .section-jump:before {
       content: "\f0d7";
       font-family: "Font Awesome 5 Pro";
       font-weight: 600;
       line-height: 1;
-      margin-bottom: -.8em; }
+      margin-bottom: -.8em;
+      -webkit-transition: all .5s;
+      transition: all .5s; }
 
 .block-navigation {
   -ms-flex-pack: distribute;
@@ -2037,7 +2044,8 @@ img {
     .store-information__container .address {
       font-size: 1.5em; }
     .store-information__container .hours ul {
-      padding: 0; }
+      padding: 0;
+      list-style-type: none; }
       .store-information__container .hours ul li {
         font-size: 1.4em; }
   .store-information h2, .store-information h3 {
@@ -2335,7 +2343,9 @@ article .hero--image img {
 .single-title,
 .page-title,
 .entry-title {
-  margin: 0; }
+  margin: 0;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
 
 .page-title {
   font-size: 4em;
@@ -2349,11 +2359,21 @@ article .hero--image img {
   padding-right: 1em;
   margin: 0 auto; }
 
+.entry-title {
+  text-align: left;
+  font-weight: 600; }
+  .entry-title a {
+    color: #333333; }
+
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */
 /* general article on a page style */
 /* general style on an attatchment */
+.sticky {
+  -webkit-box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2); }
+
 /* sticky post style */
 /* hentry class */
 /* style by category (i.e. category-videos) */
@@ -2362,7 +2382,9 @@ article .hero--image img {
 .byline {
   color: #9fa6b4;
   font-style: italic;
-  margin: 0; }
+  margin: 0;
+  text-align: left;
+  font-size: 0.9em; }
 
 /* entry content */
 .entry-content {
@@ -2451,7 +2473,7 @@ article .hero--image img {
   max-width: 50%; }
 
 .gallery-columns-3 .gallery-item {
-  max-width: 33.33%; }
+  max-width: calc(1/3 * 100%); }
 
 .gallery-columns-4 .gallery-item {
   max-width: 25%; }
@@ -2473,10 +2495,11 @@ article .hero--image img {
 
 .gallery .gallery-item {
   display: inline-block;
-  padding: 1.79104477%;
+  padding: 1%;
   text-align: center;
   vertical-align: top;
-  width: 100%; }
+  width: 100%;
+  margin: 0; }
   .gallery .gallery-item .gallery-icon img {
     margin-bottom: 0; }
 
@@ -2500,7 +2523,8 @@ PAGE NAVI STYLES
     white-space: nowrap;
     padding: 0;
     clear: both;
-    border-radius: 3px; }
+    border-radius: 3px;
+    list-style-type: none; }
   .pagination li {
     padding: 0;
     margin: 0;
@@ -2671,8 +2695,11 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.widget ul li {
-  /* deep nesting */ }
+.widget ul {
+  list-style-type: none;
+  margin-left: 0; }
+  .widget ul li {
+    /* deep nesting */ }
 
 .no-widgets {
   background-color: #fff;

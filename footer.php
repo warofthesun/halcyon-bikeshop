@@ -1,4 +1,4 @@
-
+			<a name="contact"></a>
 			<div class="store-information">
 				<h2>Contact</h2>
 				<div class="border"></div>

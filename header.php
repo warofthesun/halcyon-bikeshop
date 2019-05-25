@@ -93,7 +93,7 @@
 					<div id="mobile-nav">
 						Menu <i class="fas fa-chevron-down"></i>
 					</div>
-					<a href="#" class="section-jump"><i class="fal fa-chevron-down"></i></a>
+					<div class="section-jump"><i class="fal fa-chevron-down"></i></div>
 				</div>
 				<?php else : ?>
 				<div id="inner-header" class="wrap row">

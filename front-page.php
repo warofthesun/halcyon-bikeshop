@@ -6,7 +6,7 @@
 				<div id="inner-content" class="wrap row">
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
+							<a name="page-content"></a>
 							<?php
 								// check if the repeater field has rows of data
 								if( have_rows('image_links', 'option') ): ?>
