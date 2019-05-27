@@ -312,7 +312,7 @@ add_action( 'wp_enqueue_scripts', 'scrollmagic_scripts' );
  *
  */
 
-include 'inc/required-plugs.php';
+//include 'inc/required-plugs.php';
 
 // 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
