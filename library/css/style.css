@@ -1924,11 +1924,6 @@ img {
   @media only screen and (min-width: 64em) {
     .hero__content {
       height: 100%; } }
-  .hero__content .logo {
-    width: 100%;
-    max-width: 400px; }
-    .hero__content .logo img {
-      width: 100%; }
   .hero__content .tagline {
     font-weight: bold;
     font-size: 1.7em;
@@ -1958,6 +1953,9 @@ img {
     text-decoration: none;
     color: #fff;
     font-size: 4em; }
+    @media only screen and (max-width: 48em) {
+      .hero__content .section-jump {
+        display: none; } }
     .hero__content .section-jump:hover {
       color: #dc5034; }
       .hero__content .section-jump:hover:before {
@@ -2055,6 +2053,9 @@ img {
     letter-spacing: .03em;
     padding-bottom: 0;
     margin-bottom: 0; }
+    @media only screen and (max-width: 48em) {
+      .store-information h2, .store-information h3 {
+        font-size: 3em; } }
   .store-information h3 {
     font-size: 2em;
     display: inline-block;
@@ -2191,8 +2192,10 @@ HEADER STYLES
   position: relative; }
 
 .logo {
-  width: 100%;
-  max-width: 200px; }
+  max-width: 400px; }
+  @media only screen and (max-width: 48em) {
+    .logo {
+      max-width: 280px; } }
   .logo img {
     width: 100%; }
 
@@ -2209,7 +2212,7 @@ and more scalable.
 */
 #mobile-nav {
   text-align: center;
-  margin-top: auto;
+  margin-top: 20%;
   text-transform: uppercase;
   font-weight: bold;
   -webkit-transition: all .5s;
@@ -2217,7 +2220,9 @@ and more scalable.
   #mobile-nav.show {
     margin-top: 0em;
     padding: .5em;
-    background-color: #000; }
+    background-color: #000;
+    position: relative;
+    z-index: 10; }
     #mobile-nav.show .fa-chevron-down {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }

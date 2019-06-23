@@ -98,11 +98,7 @@ img {
 		flex-direction: column;
 
 		.logo {
-			width: 100%;
-			max-width: 400px;
-			img {
-				width: 100%;
-			}
+
 		}
 
 		.tagline {
@@ -133,6 +129,10 @@ img {
 			text-decoration: none;
 			color: $white;
 			font-size: 4em;
+
+			@media only screen and (max-width: 48em) {
+				display: none;
+			}
 
 			&:hover {
 				color: $link-color;
@@ -264,6 +264,10 @@ img {
 		letter-spacing: .03em;
 		padding-bottom: 0;
 		margin-bottom: 0;
+
+		@media only screen and (max-width: 48em) {
+			font-size: 3em;
+		}
 	}
 
 	h3 {
@@ -442,8 +446,11 @@ HEADER STYLES
 }
 
 .logo {
-	width: 100%;
-	max-width: 200px;
+	max-width: 400px;
+
+	@media only screen and (max-width: 48em) {
+		max-width: 280px;
+	}
 
 
 	img {
@@ -465,7 +472,7 @@ and more scalable.
 */
 #mobile-nav {
 	text-align: center;
-	margin-top: auto;
+	margin-top: 20%;
 	text-transform: uppercase;
 	font-weight: bold;
 	transition: all .5s;
@@ -474,6 +481,8 @@ and more scalable.
 		margin-top: 0em;
 		padding: .5em;
 		background-color: $black;
+		position: relative;
+		z-index: 10;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);
