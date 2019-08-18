@@ -646,7 +646,9 @@ article {
 			header {
 				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
+				padding-bottom: 2em;
 				text-align: center;
+				width: 100%;
 			}
 
 			footer {
@@ -1276,6 +1278,10 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+
+#shop {
+	padding-right: 2em;
+}
 
 .sidebar {}
 
