@@ -124,3 +124,22 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center;
 }
+
+.woocommerce-product-search,
+.searchform {
+	display: flex;
+
+  input[type="search"] {
+    border-radius: 3px 0 0 3px;
+    margin-bottom: 0;
+  }
+
+  button {
+    padding: 0 .5em;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    background-color: $secondary;
+
+    color: $primary;
+  }
+}

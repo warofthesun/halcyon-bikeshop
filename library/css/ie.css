@@ -218,6 +218,10 @@ LAYOUT & GRID STYLES
   width: 100%;
   padding: 0 2em; }
 
+.woocommerce-breadcrumb {
+  width: 100%;
+  padding: 2em !important; }
+
 /*********************
 HEADER STYLES
 *********************/
@@ -349,9 +353,10 @@ mobile. Make sure to double check these!
 .wrap {
   width: 1240px; }
 
-.wrap_shop {
+.wrap_shop, .woocommerce-breadcrumb {
   width: 100%;
-  max-width: 1640px; }
+  max-width: 1640px;
+  margin: 0 auto !important; }
 
 /*
 you can call the larger styles if you want, but there's really no need

@@ -141,3 +141,9 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
   color: $meta-gray;
   font-style: italic;
 }
+
+.woocommerce {
+  table.shop_attributes td {
+    padding-left: 2em;
+  }
+}

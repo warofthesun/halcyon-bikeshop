@@ -745,6 +745,9 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
   color: #9fa6b4;
   font-style: italic; }
 
+.woocommerce table.shop_attributes td {
+  padding-left: 2em; }
+
 .container-fluid,
 .container {
   margin-right: auto;
@@ -1831,6 +1834,23 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+.woocommerce-product-search,
+.searchform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .woocommerce-product-search input[type="search"],
+  .searchform input[type="search"] {
+    border-radius: 3px 0 0 3px;
+    margin-bottom: 0; }
+  .woocommerce-product-search button,
+  .searchform button {
+    padding: 0 .5em;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    background-color: #dc5034;
+    color: #eceee5; }
+
 /*********************
 BASE (MOBILE) SIZE
 *********************/
@@ -2820,6 +2840,9 @@ LAYOUT & GRID STYLES
   .wrap_shop {
     width: 100%;
     padding: 0 2em; }
+  .woocommerce-breadcrumb {
+    width: 100%;
+    padding: 2em !important; }
   /*********************
 HEADER STYLES
 *********************/
@@ -2949,9 +2972,10 @@ DESKTOP
 @media only screen and (min-width: 75em) {
   .wrap {
     width: 1240px; }
-  .wrap_shop {
+  .wrap_shop, .woocommerce-breadcrumb {
     width: 100%;
-    max-width: 1640px; } }
+    max-width: 1640px;
+    margin: 0 auto !important; } }
 
 /*********************
 LARGE VIEWING SIZE

@@ -3,7 +3,8 @@
   width: 1240px;
 }
 
-.wrap_shop {
+.wrap_shop, .woocommerce-breadcrumb {
   width: 100%;
   max-width: 1640px;
+  margin: 0 auto !important;
 }

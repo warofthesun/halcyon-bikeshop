@@ -12,11 +12,15 @@ LAYOUT & GRID STYLES
 	width: 760px;
 }
 
-.wrap_shop {
+.wrap_shop, {
 	width: 100%;
 	padding: 0 2em;
 }
 
+.woocommerce-breadcrumb {
+	width: 100%;
+	padding: 2em !important;
+}
 /*********************
 HEADER STYLES
 *********************/
