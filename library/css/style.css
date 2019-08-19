@@ -748,6 +748,24 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
 .woocommerce table.shop_attributes td {
   padding-left: 2em; }
 
+.woocommerce .widget_product_categories a, .woocommerce .widget_layered_nav a {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none; }
+
+.woocommerce .widgettitle {
+  border-bottom: 1px solid #e6e6e6; }
+
+.woocommerce .widget_products a {
+  text-decoration: none; }
+
+.woocommerce .widget_products li {
+  margin-bottom: 1em !important; }
+
+.woocommerce .onsale {
+  background-color: #fff !important;
+  color: #dc5034 !important; }
+
 .container-fluid,
 .container {
   margin-right: auto;

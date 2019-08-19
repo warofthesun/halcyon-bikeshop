@@ -146,4 +146,31 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
   table.shop_attributes td {
     padding-left: 2em;
   }
+
+  .widget_product_categories, .widget_layered_nav {
+    a {
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  .widgettitle {
+    border-bottom: 1px solid lighten($primary-lt, 70%);
+  }
+
+  .widget_products {
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      margin-bottom: 1em !important;
+    }
+  }
+
+  .onsale {
+    background-color: $white !important;
+    color: $secondary !important;
+  }
 }
