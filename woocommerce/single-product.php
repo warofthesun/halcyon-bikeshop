@@ -1,4 +1,4 @@
-<!-- single product - local -->
+<!-- single product -->
 <?php
 /**
  * The Template for displaying all single products

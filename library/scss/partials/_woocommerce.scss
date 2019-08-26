@@ -147,6 +147,15 @@ a#sp-wqv-view-button.button.sp-wqv-view-button,
     padding-left: 2em;
   }
 
+  &-product-attributes-item__value {
+    p {
+      a {
+        text-decoration: none;
+        font-style: normal;
+      }
+    }
+  }
+
   .widget_product_categories, .widget_layered_nav {
     a {
       font-weight: bold;
