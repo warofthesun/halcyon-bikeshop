@@ -2077,14 +2077,26 @@ img {
   margin-bottom: 4em; }
   .link-section ul {
     list-style: none; }
-    .link-section ul li a {
-      text-decoration: none;
-      font-size: 2em; }
-      .link-section ul li a .brand-caption {
-        font-size: .6em; }
-      .link-section ul li a img {
-        width: 100%;
-        height: auto; }
+    .link-section ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .link-section ul li a {
+        text-decoration: none;
+        font-size: 2em;
+        margin-bottom: 2em; }
+        .link-section ul li a .brand-caption {
+          font-size: .6em; }
+        .link-section ul li a img {
+          width: auto;
+          max-height: 100px;
+          margin-bottom: 0; }
 
 .store-information {
   text-align: center;
