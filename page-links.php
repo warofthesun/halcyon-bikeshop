@@ -25,31 +25,65 @@
 								<section class="entry-content " itemprop="articleBody">
 
 									<?php	the_content(); ?>
-									<?php
-										// check if the repeater field has rows of data
-										if( have_rows('image_links') ): ?>
-											<ul class="row block-navigation block-navigation__blocks">
+									<?php if( get_field('link_type') == 'image' ): ?>
+										<?php
+											// check if the repeater field has rows of data
+											if( have_rows('image_links') ): ?>
+												<ul class="row block-navigation block-navigation__blocks">
 
-										  <?php while ( have_rows('image_links') ) : the_row(); ?>
-												<li class="block">
+											  <?php while ( have_rows('image_links') ) : the_row(); ?>
+													<li class="block">
 
-													<a href="<?php the_sub_field('link'); ?>">
-  												<?php
-													$image = get_sub_field('image');
-													$size = 'halcyon-front-page'; ?>
+														<a href="<?php the_sub_field('link'); ?>">
+	  												<?php
+														$image = get_sub_field('image');
+														$size = 'halcyon-front-page'; ?>
 
-  												<?php echo wp_get_attachment_image( $image, $size ); ?>
-  												<div class="overlay">
-  													<div>
-  															<?php the_sub_field('link_title'); ?>
-  													</div>
-  												</div>
-  												</a>
+	  												<?php echo wp_get_attachment_image( $image, $size ); ?>
+	  												<div class="overlay">
+	  													<div>
+	  															<?php the_sub_field('link_title'); ?>
+	  													</div>
+	  												</div>
+	  												</a>
 
-											 <?php endwhile; ?>
-										 		</li>
-											</ul>
-									<?php	else : endif; ?>
+												 <?php endwhile; ?>
+											 		</li>
+												</ul>
+										<?php	endif; ?>
+									<?php elseif( get_field('link_type') == 'text' ): ?>
+										<?php if( have_rows('text_links') ): while ( have_rows('text_links') ) : the_row(); ?>
+											<div class="link-section">
+													<h2><?php the_sub_field('section_header'); ?></h2>
+													<?php if( have_rows('links') ): ?>
+													<ul class="row">
+														<?php while ( have_rows('links') ) : the_row(); ?>
+															<?php
+																$link = get_sub_field('url');
+																$link_url = $link['url'];
+																$link_title = $link['title'];
+																$link_target = $link['target'] ? $link['target'] : '_self';
+															?>
+														<li class="col-xs-6 col-md-4">
+															<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+																<?php if(get_sub_field('image') ) : ?>
+																	<img src="<?php the_sub_field('image');?>" />
+																	<div class="brand-caption">
+																		<?php echo esc_html($link_title); ?>
+																	</div>
+																<?php else: ?>
+																	<?php echo esc_html($link_title); ?>
+																<?php endif; ?>
+															</a>
+														</li>
+														<?php endwhile; ?>
+													</ul>
+											</div>
+													<?php endif; endwhile; ?>
+
+										<?php	endif; ?>
+									<?php endif; ?>
+
 
 								</section>
 

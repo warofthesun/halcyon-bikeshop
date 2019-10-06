@@ -228,6 +228,31 @@ img {
 	}
 }
 
+.link-section {
+	text-align: center;
+	margin-bottom: 4em;
+
+	ul {
+		list-style: none;
+
+		li {
+			a {
+				text-decoration: none;
+				font-size: 2em;
+
+				.brand-caption {
+					font-size: .6em;
+				}
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
 .store-information {
 	text-align: center;
 	font-family: $sans-serif;
