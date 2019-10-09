@@ -239,7 +239,7 @@ img {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			
+
 			a {
 				text-decoration: none;
 				font-size: 2em;
@@ -1222,7 +1222,7 @@ COMMENT STYLES
 
 	/* comment reply link */
 	.comment-reply-link {
-		@extend .accent-btn;
+		@extend .link-btn;
 		font-size: 0.9em;
 		float: right;
 
@@ -1278,7 +1278,7 @@ COMMENT FORM STYLES
 
 	/* comment submit button */
 	#submit {
-		@extend .accent-btn;
+		@extend .link-btn;
 		float: right;
 		font-size: 1em;
 	}

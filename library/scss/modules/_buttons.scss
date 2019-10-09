@@ -30,10 +30,9 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-family: $sans-serif;
   text-decoration: none;
   color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
+  font-size: 1em;
+  font-weight: 700;
   line-height: 34px;
-  font-weight: normal;
   padding: 0 24px;
   border-radius: 4px;
   border: 0;
@@ -59,17 +58,17 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.accent-btn {
+.link-btn, #mc-embedded-subscribe {
   @extend %btn; // here we load the btn defaults
-  background-color: $accent;
+  background-color: $link-color;
 
   &:hover,
   &:focus {
-    background-color: darken($accent, 4%);
+    background-color: $link-hover;
   } // end hover
 
   &:active {
-    background-color: darken($accent, 5%);
+    background-color: $link-hover;
   } // end active
 
-} // end blue button
+} // end accent button
