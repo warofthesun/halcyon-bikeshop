@@ -7,6 +7,9 @@
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<a name="page-content"></a>
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								<?php the_content(); ?>
+							<?php endwhile; endif; ?>
 							<?php
 								// check if the repeater field has rows of data
 								if( have_rows('image_links', 'option') ): ?>
